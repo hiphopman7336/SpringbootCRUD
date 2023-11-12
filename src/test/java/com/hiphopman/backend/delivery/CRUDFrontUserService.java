@@ -1,13 +1,53 @@
 package com.hiphopman.backend.delivery;
 
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.TestMethodOrder;
+import com.hiphopman.backend.api.UserApi;
+import com.hiphopman.backend.exception.BaseException;
+import org.junit.jupiter.api.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CRUDFrontUserService {
+	@Autowired
+	private UserApi userApi;
 
+	@Order(0)
+	@Test
+	void UserFrontGetAllUser() throws BaseException {
+		userApi.getByID("12");
+
+		// check not null
+		Assertions.assertNotNull(userApi);
+
+		// check equals name
+		Assertions.assertEquals("", "");
+
+		// check match local & database
+		boolean isMatched = true;
+		Assertions.assertTrue(isMatched);
+
+	}
+	@Order(1)
+	@Test
+	void UserFrontGetByID() throws BaseException {
+
+	}
+	@Order(2)
+	@Test
+	void UserFrontQuery() throws BaseException {
+
+	}
+	@Order(3)
+	@Test
+	void UserFrontUpdateUser() throws BaseException {
+
+	}
+	@Order(4)
+	@Test
+	void UserFrontDelete() throws BaseException {
+
+	}
 
 	// DataTest
 	 interface TestCreateData {

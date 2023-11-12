@@ -20,33 +20,32 @@ public class UserApi {
 
     @GetMapping("/getAllUser")
     public ResponseEntity<String> getAllUser() throws BaseException {
-        //String response = business.refreshToken();
-        return ResponseEntity.ok("");
+        String response = business.getAllUser();
+        return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/getByID")
-    public ResponseEntity<String> getByID() throws BaseException {
-        //String response = business.refreshToken();
-        return ResponseEntity.ok("");
+    @GetMapping("/getByID/{id}")
+    public ResponseEntity<String> getByID(@PathVariable("id") String id) throws BaseException {
+        String response = business.getByID(id);
+        return ResponseEntity.ok(response);
     }
 
-
-    @PostMapping("/query")
-    public ResponseEntity<String> query(@RequestBody MLoginRequest request) throws BaseException {
-        //String response = business.login(request);
-        return ResponseEntity.ok("");
+    @PostMapping("/queryUser")
+    public ResponseEntity<MRegisterResponse> queryUser(@RequestBody MLoginRequest request) throws BaseException {
+        MRegisterResponse response = business.queryUser(request);
+        return ResponseEntity.ok(response);
     }
 
     @PutMapping("/updateUser")
-    public ResponseEntity<MRegisterResponse> updateUser(@RequestBody MRegisterRequest request) throws BaseException {
-        //MRegisterResponse response = business.register(request);
-        return ResponseEntity.ok(null);
+    public ResponseEntity<String> updateUser(@RequestBody String email) throws BaseException {
+        String response = business.updateUser(email);
+        return ResponseEntity.ok("Update : " + response);
     }
 
     @DeleteMapping("/deleteUser")
-    public ResponseEntity<String> deleteUser(@RequestBody MLoginRequest request) throws BaseException {
-        //User response = business.getProfile(request.getEmail());
-        return ResponseEntity.ok("");
+    public ResponseEntity<String> deleteUser(@RequestBody String email) throws BaseException {
+        String response = business.deleteUser(email);
+        return ResponseEntity.ok("Delete : " + response);
     }
 
 }
