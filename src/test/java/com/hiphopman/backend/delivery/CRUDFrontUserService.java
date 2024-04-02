@@ -15,18 +15,21 @@ class CRUDFrontUserService {
 	@Order(1)
 	@Test
 	void UserFrontGetByID() throws BaseException {
-
+		userApi.getAllUser();
 	}
+	
 	@Order(2)
 	@Test
 	void UserFrontQuery() throws BaseException {
 
 	}
+	
 	@Order(3)
 	@Test
 	void UserFrontUpdateUser() throws BaseException {
 
 	}
+	
 	@Order(4)
 	@Test
 	void UserFrontDelete() throws BaseException {
