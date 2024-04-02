@@ -12,7 +12,6 @@ class CRUDFrontUserService {
 	@Autowired
 	private UserApi userApi;
 
-
 	@Order(1)
 	@Test
 	void UserFrontGetByID() throws BaseException {
@@ -50,19 +49,15 @@ class CRUDFrontUserService {
 	}
 
 	interface AddressTestCreateData {
-
 		String line1 = "335/66";
 		String line2 = "Muang";
 		String zipcode = "63000";
-
 	}
 
 	interface AddressTestCreateData2 {
-
 		String line1 = "456/7";
 		String line2 = "Muang";
 		String zipcode = "37001";
-
 	}
 
 	interface TestUpdateData {
