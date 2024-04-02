@@ -1,13 +1,13 @@
 package com.hiphopman.backend.business;
 
+import java.util.Objects;
+
+import org.springframework.stereotype.Service;
+
 import com.hiphopman.backend.exception.BaseException;
 import com.hiphopman.backend.exception.UserException;
 import com.hiphopman.backend.model.MLoginRequest;
-import com.hiphopman.backend.model.MRegisterRequest;
 import com.hiphopman.backend.model.MRegisterResponse;
-import org.springframework.stereotype.Service;
-
-import java.util.Objects;
 
 @Service
 public class UserBusiness {
