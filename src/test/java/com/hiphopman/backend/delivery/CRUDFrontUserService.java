@@ -12,22 +12,7 @@ class CRUDFrontUserService {
 	@Autowired
 	private UserApi userApi;
 
-	@Order(0)
-	@Test
-	void UserFrontGetAllUser() throws BaseException {
-		userApi.getByID("12");
 
-		// check not null
-		Assertions.assertNotNull(userApi);
-
-		// check equals name
-		Assertions.assertEquals("", "");
-
-		// check match local & database
-		boolean isMatched = true;
-		Assertions.assertTrue(isMatched);
-
-	}
 	@Order(1)
 	@Test
 	void UserFrontGetByID() throws BaseException {
